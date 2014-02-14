@@ -1,11 +1,17 @@
-common.php
-
 <?php
+$host = 'localhost';
+$user = 'root';
+$password = 'root';
+$link = NULL;
+$link = mysql_connect($host, $user, $password);
+if (!$link) {
+   die('Could not connect: ' . mysql_error());
+}
 
-	define("DB_USER","jpo2015");
-	define("DB_PSS","Seanjay1234321");
-	define("localhost","localhost");
-	define("")
 
-
+//if($link) {echo 'Connected successfully';}
+$db = mysql_select_db("name_of_your_database", $link);
+if (!$db) {
+   die('Could not connect to db: ' . mysql_error());
+}
 ?>
